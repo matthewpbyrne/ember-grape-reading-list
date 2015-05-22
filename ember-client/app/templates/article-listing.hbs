@@ -1,0 +1,20 @@
+<tr>
+  <td>
+    {{md-check checked=isReadByUser}}  
+    {{#if isReadByUser}}
+      <span>{{ago updatedAt}}</span>
+    {{/if}}
+  </td>
+  
+  <td>
+    {{colleagueReadCount}} of {{colleagueCount}}
+  </td>
+  
+  <td>{{model.comment}}</td>
+  <td><a href={{model.article.url}}>link</a></td>
+  <td>
+    {{moment model.createdAt 'DD-MMM-YYYY'}}
+  </td>
+
+</tr>
+

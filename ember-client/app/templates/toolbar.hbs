@@ -1,0 +1,22 @@
+{{#if session.isAuthenticated}}
+<div class='container'>
+  <div class="row valign-wrapper">
+    <div class="col s12 m12 l6 left-align">
+      <h4 class="header">Reading Lists</h4>
+      <span>for <span class="header">{{currentTenant.name}}</span></span>
+    </div>
+    <div class="col s12 m12 l6 valign right-align">
+      <div class="valign-wrapper right">
+        <div class="valign">
+          <span class="header greeting">Hello, {{currentUser.name}}</span>
+        </div>
+
+        <div class="right">
+          {{md-btn icon='mdi-action-exit-to-app' action='invalidateSession' buttonType='floating'}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{{/if}}

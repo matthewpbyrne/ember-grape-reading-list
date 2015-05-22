@@ -1,0 +1,38 @@
+@import 'materialize';
+
+/* FIXME: Workaround for https://github.com/Dogfalo/materialize/issues/1079 */
+@each $mdi-icon-name, $mdi-icon-value in $mdi-list-icons {
+  .#{$mdi-prefix}#{$mdi-icon-name}:before {
+    content: "\""+ $mdi-icon-value +"\"";
+  }
+}
+
+$primary-color: color("teal", "lighten-2");
+
+.header {
+  color: $primary-color;
+  font-weight: 300;
+}
+
+.greeting {
+  margin-right: 15px;
+}
+
+.right-floating-button {
+  margin-right: 12px;
+}
+
+td {
+    max-width: 150px;
+    word-wrap: break-word;
+}
+
+.team-showing-title {
+  margin: 0px;
+}
+
+.collection-title {
+  font-weight: bold;
+  margin:  0px;
+  padding: 17px 0px 12px;
+}

@@ -1,0 +1,19 @@
+<h6 class="collection-title">My Teams</h6>
+
+<ul class="collection">
+  {{#each team in model}}
+    <li class="collection-item avatar">
+      {{#if team.isLeader}}
+        <i class="large mdi-action-assignment-ind circle amber accent-2"></i>
+      {{else}}
+        <i class="mdi-av-play-arrow circle grey"></i>
+      {{/if}}
+
+      <span class="title">{{#link-to "team" team}}{{team.name}}{{/link-to}}</span>
+
+      {{#if team.isLeader}}
+        <span>(leader)</span>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

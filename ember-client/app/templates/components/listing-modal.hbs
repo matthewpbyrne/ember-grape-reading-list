@@ -1,0 +1,19 @@
+{{#if team.isLeader}}
+  <div class="right right-floating-button">
+    {{md-btn icon='mdi-content-add' action='openModal' buttonType='floating'}}
+  </div>
+{{/if}}
+
+{{#if modalIsOpen}}
+{{#md-modal close='closeModal' class="test-modal"}}
+  <div class="modal-content">
+    <h4>Share an article with {{team.name}}</h4>
+    {{md-input value=url label="e.g. http://en.wikipedia.org/wiki/Wikipedia" icon="mdi-editor-insert-link"}}
+    {{md-textarea label='Your comment about article' value=comment icon="mdi-editor-insert-comment"}}
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-green btn-flat save-button" {{action 'save'}}>Save</a>
+    <a class="modal-action modal-close waves-effect waves-green btn-flat cancel-button" {{action 'closeModal'}}>Cancel</a>
+  </div>
+{{/md-modal}}
+{{/if}}

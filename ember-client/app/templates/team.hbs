@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s6 m6 l6">
+    <h3 class="team-showing-title">{{currentTeam.name}}</h3>
+  </div>
+  {{listing-modal team=model action="createlisting"}}
+</div>
+
+<div class="row">
+  <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+    {{render "teams" currentUser.teams}}
+  </div>
+
+  <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+    {{partial "article-listings"}}
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<table class="striped">
+  <thead>
+    <tr>
+        <th data-field="status">Read Status</th>
+        <th data-field="team">Team Status</th>
+        <th data-field="comment">
+          Comment
+          <i class="mdi-hardware-keyboard-arrow-up" {{action "sortBy" "comment" "desc"}}></i>
+          <i class="mdi-hardware-keyboard-arrow-down" {{action "sortBy" "comment" "asc"}}></i>
+        </th>
+        <th data-field="link">Link</th>
+        <th data-field="date">
+          Posting Date 
+          <i class="mdi-hardware-keyboard-arrow-up" {{action "sortBy" "createdAt" "desc"}}></i>
+          <i class="mdi-hardware-keyboard-arrow-down" {{action "sortBy" "createdAt" "asc"}}></i>
+        </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each listing in displayedListings}}
+      {{render "article-listing" listing}}
+    {{/each}}
+  </tbody>
+</table>
+
+<div class="right">
+  <span>{{listingsCount}} listings found.</span>
+</div>
+
+{{#if paginationRequired}}
+  {{md-pagination min=1 max=pageCount current=articlesPage range=pageCount}}
+{{/if}}

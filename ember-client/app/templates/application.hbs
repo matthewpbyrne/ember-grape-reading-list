@@ -1,0 +1,15 @@
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}
+
+{{partial "toolbar"}}
+
+<div class='container'>
+  {{#if session.isAuthenticated}}
+    {{outlet}}
+  {{else}}
+    {{#unless isLoginPath}}
+      {{#link-to 'login'}}Login{{/link-to}}
+    {{/unless}}
+    {{outlet}}
+  {{/if}}
+</div>
